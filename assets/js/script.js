@@ -1,22 +1,51 @@
-let char = new Sorcerer('Jmz');
-let monster = new BigMonster();
-let log = new Log(document.querySelector('.log'));
+const defaultCharacter = {
+    name:'',
+    life: 100,
+    maxLife:100,
+    attack: 10,
+    defense:8
+}
 
-const stage = new Stage(
-    char,
-    monster,
-    document.querySelector('#char'),
-    document.querySelector('#monster'),
-    log
-);
+const createKnight = (name) => {
+    return{
+        ...defaultCharacter,
+        name,
+        life: 100,
+        maxLife:100,
+        attack: 10,
+        defense:8
+    }
+}
 
-stage.start();
+const createSorcerer = (name) => {
+    return{
+        ...defaultCharacter,
+        name,
+        life: 50,
+        maxLife:50,
+        attack: 14,
+        defense:3
+    }
+}
 
-console.log('Status do personagem:');
-console.log(char.name);
-console.log(char.life);
-console.log(char.attack);
-console.log('Status do monstro:');
-console.log(monster.name);
-console.log(monster.life);
-console.log(monster.attack);
+const createLittleMonster= () => {
+    return{
+        ...defaultCharacter,
+        name: 'Little Monster',
+        life: 100,
+        maxLife:100,
+        attack: 10,
+        defense:8
+    }
+}
+
+const createBigMonster = () => {
+    return{
+        ...defaultCharacter,
+        name: 'Big Monster',
+        life: 120,
+        maxLife:120,
+        attack: 16,
+        defense:6
+    }
+}
